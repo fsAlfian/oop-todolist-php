@@ -33,7 +33,13 @@ namespace View {
         }
 
         function addTodolist() : void {
-            
+             echo  'ADD TODO LIST' . PHP_EOL;
+            $todo = InputHelper::input("Input your todo");
+            if ($todo == 'x') {
+                echo 'Cancel add todo' . PHP_EOL;
+            } else {
+                $this->todoListService->addTodolist($todo);
+            }
         }
 
         function removeTodolist() : void {
