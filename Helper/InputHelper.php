@@ -3,7 +3,7 @@
 namespace Helper{
     class InputHelper {
         static function input(string $info) : string {
-            echo '$info : ';
+            echo " See: ";
             $result = fgets(STDIN);
             return trim($result);
         }
