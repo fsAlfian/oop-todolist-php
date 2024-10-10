@@ -43,7 +43,14 @@ namespace View {
         }
 
         function removeTodolist() : void {
-            
+            echo "REMOVE TODO LIST" . PHP_EOL;
+            $todo = InputHelper::input("Input todo number");
+            $success = $this->todoListService->removeTodoList($number);
+            if ($success) {
+                echo "Success remove todo list" . PHP_EOL;
+            } else {
+                echo "Failed remove todo list" . PHP_EOL;
+            }
         }
     }
 }
