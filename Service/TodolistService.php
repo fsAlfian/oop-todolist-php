@@ -31,7 +31,13 @@ namespace Service {
             echo "Added Todolist: $todo" . PHP_EOL;
         }
 
-        public function removeTodolist(int $number) : void {}
+        public function removeTodolist(int $number) : void {
+           if ($this->todoListRepository->remove($number)) {
+               echo "Removed Todolist" . PHP_EOL;
+           } else {
+               echo "Todolist not found" . PHP_EOL;
+           }
+        }
     }
 
 }

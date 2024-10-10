@@ -18,7 +18,17 @@ namespace Repository{
             $this->todoList[$number] = $todoList;
         }
 
-        public function remove (Todolist $todoList) : void{
+        public function remove (Todolist $todoList) : bool{
+             if (sizeof($this->todoList) < $number) {
+                return false;
+            }
+
+            for ($i = $number; $i < sizeof($this->todoList); $i++) {
+                $this->todoList[$i] = $this->todoList[$i + 1];
+            }
+            unset($this->todoList[sizeof($this->todoList)]);
+            
+            return true;
         }
 
          public function findAll() : array{
