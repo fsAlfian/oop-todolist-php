@@ -4,9 +4,9 @@ namespace Service {
     use Repository\TodolistRepository;
 
     interface TodolistService {
-        function showTodolist();
-        function addTodolist(string $todo);
-        function removeTodolist(int $number);
+        public function showTodolist();
+        public function addTodolist(string $todo);
+        public function removeTodolist(int $number);
     }
 
     class TodolistServiceImpl implements TodolistService {
@@ -17,12 +17,16 @@ namespace Service {
             $this->todoListRepository = $todoListRepository;
         }
 
-        function showTodolist() : void {
+        public function showTodolist() : void {
             echo "TODOLIST" . PHP_EOL;
             foreach ($this->todoListRepository->findAll() as $number => $value) {
                 echo "$number. $value" . PHP_EOL;
             }
         }
+
+        public function addTodolist(string $todo) : void {}
+
+        public function removeTodolist(int $number) : void {}
     }
 
 }

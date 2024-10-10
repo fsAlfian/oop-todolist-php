@@ -11,17 +11,15 @@ namespace Repository{
 
     class TodolistRepositoryImpl implements TodolistRepository{
 
-        private array $todolist = array();
-        
-        function save (Todolist $todolist) : void{
-            
+        public array $todoList = array();
+        public function save (Todolist $todoList) : void{
         }
 
-        function remove (Todolist $todolist) : void{
+        public function remove (Todolist $todoList) : void{
         }
 
-        function findAll() : array{
-            return $this->todolist;
+         public function findAll() : array{
+            return  $this->todoList;
         }
     }
 }
